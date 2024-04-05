@@ -22,8 +22,9 @@ class TextAnalyzer:
         return len(words)
     
     def get_sentence_count(self):
-        sentence = self.text.split('.')
-        return len(sentence)
+        sentences = self.text.split('.')
+        sentences = [sentence.strip() for sentence in sentences if sentence.strip()]
+        return len(sentences)
     
     def get_average_word_length(self):
         words = self.text.split()
