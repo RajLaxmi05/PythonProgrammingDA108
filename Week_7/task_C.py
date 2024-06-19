@@ -4,7 +4,7 @@ def load_pi_digits(filename):
     global pi_string 
     with open(filename, 'r') as file:
         pi_string = file.read().strip()
-        load_pi_digits("pi_1M.txt")     
+load_pi_digits("pi_1M.txt")     
 print(pi_string)
 
 
@@ -24,6 +24,7 @@ def get_pi_one_gram_stats():
     total_length = len(pi_string)
     digit_percentages = {digit: (count / total_length) * 100 for digit, count in digit_counts.items()}
     return digit_percentages
+
 stats = get_pi_one_gram_stats()
 for digit, percentage in stats.items():
     print(f"Digit: {digit}, Percentage: {percentage:.2f}%")
